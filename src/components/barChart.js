@@ -36,7 +36,7 @@ export default class barChart extends Component {
 			},
 			legend: {
 				verticalAlign: "top",
-				fontFamily: "GothamHTF"
+				fontFamily: "sans-serif"
 			},
 			data: [{
 				type: "bar",

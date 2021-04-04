@@ -40,18 +40,20 @@ export default class lineChart extends Component {
 			},
 			legend: {
 				verticalAlign: "top",
-				fontFamily: "GothamHTF"
+				fontFamily: "sans-serif"
 			},
 			data: [{
 				type: "spline",
 				name: "Confirmed cases",
 				showInLegend: true,
-				dataPoints: dayWiseConfirm
+				dataPoints: dayWiseConfirm,
+				fontFamily: "sans-serif"
 			}, {
 				type: "spline",
 				name: "Recovered cases",
 				showInLegend: true,
-				dataPoints: dayWiseRecovered
+				dataPoints: dayWiseRecovered,
+				fontFamily: "sans-serif"
 			}]
 		}
 		return (

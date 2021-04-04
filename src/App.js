@@ -4,6 +4,7 @@ import axios from 'axios'
 import PieChart from './components/pieChart'
 import LineChart from './components/lineChart'
 import BarChart from './components/barChart'
+import CompareGraph from './components/compareGraph'
 import GridReports from './components/gridReports'
 
 class App extends Component {
@@ -11,25 +12,37 @@ class App extends Component {
     super(props);
     this.state = {
       totalDayWiseCase: '',
-      totalStateWiseCase: ''
+      totalStateWiseCase: '',
+      loader: true
     };
   }
   componentDidMount() {
     axios.get('https://api.covid19india.org/data.json').then(stateData => {
       this.setState({
         totalDayWiseCase: stateData.data.cases_time_series,
-        totalStateWiseCase: stateData.data.statewise
+        totalStateWiseCase: stateData.data.statewise,
+        loader: false
       })
     })
   }
   render() {
     return (
-      <div className="graphes-wrapper">
-        <PieChart totalStateWiseCase={this.state.totalStateWiseCase} />
-        <LineChart totalDayWiseCase={this.state.totalDayWiseCase} />
-        <BarChart totalDayWiseCase={this.state.totalDayWiseCase} />
-        <GridReports totalStateWiseCase={this.state.totalStateWiseCase} />
-      </div>
+      this.state.loader ?
+        <div className="loader">
+          <p> Loading ReactCharts webapp....</p>
+          <div className="rect1"></div>
+          <div className="rect2"></div>
+          <div className="rect3"></div>
+          <div className="rect4"></div>
+          <div className="rect5"></div>
+        </div> :
+        <div className="graphes-wrapper">
+          <PieChart totalStateWiseCase={this.state.totalStateWiseCase} />
+          <LineChart totalDayWiseCase={this.state.totalDayWiseCase} />
+          <BarChart totalDayWiseCase={this.state.totalDayWiseCase} />
+          <CompareGraph totalStateWiseCase={this.state.totalStateWiseCase} />
+          <GridReports totalStateWiseCase={this.state.totalStateWiseCase} />
+        </div>
     );
   }
 }
