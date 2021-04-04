@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import './App.css';
 import axios from 'axios'
 import PieChart from './components/pieChart'
@@ -36,13 +36,16 @@ class App extends Component {
           <div className="rect4"></div>
           <div className="rect5"></div>
         </div> :
-        <div className="graphes-wrapper">
-          <PieChart totalStateWiseCase={this.state.totalStateWiseCase} />
-          <LineChart totalDayWiseCase={this.state.totalDayWiseCase} />
-          <BarChart totalDayWiseCase={this.state.totalDayWiseCase} />
-          <CompareGraph totalStateWiseCase={this.state.totalStateWiseCase} />
-          <GridReports totalStateWiseCase={this.state.totalStateWiseCase} />
-        </div>
+        <Fragment>
+          <h1>Charts Dashboard</h1>
+          <div className="graphes-wrapper">
+            <PieChart totalStateWiseCase={this.state.totalStateWiseCase} />
+            <LineChart totalDayWiseCase={this.state.totalDayWiseCase} />
+            <BarChart totalDayWiseCase={this.state.totalDayWiseCase} />
+            <CompareGraph totalStateWiseCase={this.state.totalStateWiseCase} />
+            <GridReports totalStateWiseCase={this.state.totalStateWiseCase} />
+          </div>
+        </Fragment>
     );
   }
 }
