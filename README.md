@@ -1,6 +1,6 @@
 # ReactCharts project
 
-This Reactjs project provides/shows reports using charts
+This Reactjs project enables users to drag and drop any widget from one place to other
 
 # Copyright and License
 
