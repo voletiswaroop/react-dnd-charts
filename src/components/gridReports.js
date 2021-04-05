@@ -16,7 +16,7 @@ export default class gridReports extends Component {
       )
     })
     return (
-      <div className="corona-wrapper chart-item double-flex">
+      <div className="corona-wrapper chart-item double-flex" onDragOver={(ev) => ev.preventDefault()} draggable={true} id={this.props.order} onDragStart={this.props.handleDrag} onDrop={this.props.handleDrop}>
         <div className="tile-container">
           <div className="tile-header">Statewise covid report</div>
           <div className="title-close" title="Close Tile"> </div>

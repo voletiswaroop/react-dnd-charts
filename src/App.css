@@ -103,6 +103,7 @@ h1 {
   padding: 10px;
   margin-bottom: 20px;
   justify-content: space-between;
+  cursor: move;
 }
 
 .title-close {
@@ -142,12 +143,9 @@ h1 {
   border-radius: 2px;
 }
 
-.graphes-wrapper .chart-item .canvasjs-chart-toolbar {
-  display: none;
-}
-
 .graphes-wrapper .chart-item {
-  width: calc(33.33% - 1rem) !important;
+  resize: both;
+  width: calc(33.33% - 1rem);
   padding: 20px;
   overflow: hidden;
   background: white;
@@ -168,7 +166,16 @@ h1 {
 }
 
 .graphes-wrapper .chart-item.double-flex {
-  width: calc(100% - 33.33% - 1rem) !important;
+  width: calc(100% - 33.33% - 1rem);
+}
+
+.graphes-wrapper .chart-item .canvasjs-chart-toolbar {
+  display: none;
+}
+
+.graphes-wrapper .chart-item .canvasjs-chart-canvas {
+  width: 100% !important;
+  height: auto !important;
 }
 
 /* bullet reports Css */
@@ -211,8 +218,10 @@ h1 {
   background-color: #f7f7f7;
 }
 
-.corona-wrapper .corona-cases-statewise:active {
+.corona-wrapper .corona-cases-statewise:active,
+.corona-wrapper .corona-cases-statewise:hover {
   background-color: #7280ce;
+  color: #fff;
 }
 
 @media screen and (max-width:768px) {

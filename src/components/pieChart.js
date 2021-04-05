@@ -1,22 +1,8 @@
 import React, { Component } from 'react';
-import CanvasJSReact from './canvasjs.react';
+import CanvasJSReact from '../helper/canvasjs.react';
 let CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
 export default class differentGraphes extends Component {
-	constructor() {
-		super();
-		this.toggleDataSeries = this.toggleDataSeries.bind(this);
-	}
-
-	toggleDataSeries(e) {
-		if (typeof (e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
-			e.dataSeries.visible = false;
-		}
-		else {
-			e.dataSeries.visible = true;
-		}
-		this.chart.render();
-	}
 
 	render() {
 		let dataPointsStateActive = []
@@ -27,7 +13,6 @@ export default class differentGraphes extends Component {
 			})
 			return null;
 		})
-
 
 		const pieChart = {
 			exportEnabled: true,
@@ -47,7 +32,7 @@ export default class differentGraphes extends Component {
 			}]
 		}
 		return (
-			<div className="chart-item">
+			<div className="chart-item" onDragOver={(ev) => ev.preventDefault()} draggable={true} id={this.props.order} onDragStart={this.props.handleDrag} onDrop={this.props.handleDrop}>
 				<div className="tile-container">
 					<div className="tile-header">Top 10 COVID19 States</div>
 					<div className="title-close" title="Close Tile"> </div>
@@ -59,3 +44,4 @@ export default class differentGraphes extends Component {
 		);
 	}
 }
+

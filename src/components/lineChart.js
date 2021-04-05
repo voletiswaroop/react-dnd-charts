@@ -1,22 +1,8 @@
 import React, { Component } from 'react';
-import CanvasJSReact from './canvasjs.react';
+import CanvasJSReact from '../helper/canvasjs.react';
 let CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
 export default class lineChart extends Component {
-	constructor() {
-		super();
-		this.toggleDataSeries = this.toggleDataSeries.bind(this);
-	}
-
-	toggleDataSeries(e) {
-		if (typeof (e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
-			e.dataSeries.visible = false;
-		}
-		else {
-			e.dataSeries.visible = true;
-		}
-		this.chart.render();
-	}
 
 	render() {
 		let dayWiseConfirm = [], dayWiseRecovered = [], requiredCases = this.props.totalDayWiseCase.length
@@ -57,7 +43,7 @@ export default class lineChart extends Component {
 			}]
 		}
 		return (
-			<div className="chart-item">
+			<div className="chart-item" onDragOver={(ev) => ev.preventDefault()} draggable={true} id={this.props.order} onDragStart={this.props.handleDrag} onDrop={this.props.handleDrop}>
 				<div className="tile-container">
 					<div className="tile-header">Conf vs Recov cases</div>
 					<div className="title-close" title="Close Tile"> </div>
