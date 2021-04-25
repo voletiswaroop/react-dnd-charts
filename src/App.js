@@ -59,12 +59,14 @@ class App extends Component {
   }
 
   handleDrag(ev) {
+    ev.currentTarget.classList.add('picked')
     this.setState({
       dragId: ev.currentTarget.id
     })
   };
 
   handleDrop(ev) {
+    ev.currentTarget.classList.remove('picked')
     const dragBox = this.state.componentOrder.find(widget => widget.component === this.state.dragId);
     const dropBox = this.state.componentOrder.find(widget => widget.component === ev.currentTarget.id);
     const dragBoxOrder = dragBox.order;
@@ -101,6 +103,7 @@ class App extends Component {
               if (item.component === 'barchart') return <BarChart totalDayWiseCase={this.state.totalDayWiseCase} order={item.component} key={index} handleDrag={(e) => this.handleDrag(e)} handleDrop={(e) => this.handleDrop(e)} />
               if (item.component === 'comparechart') return <CompareGraph totalStateWiseCase={this.state.totalStateWiseCase} order={item.component} key={index} handleDrag={(e) => this.handleDrag(e)} handleDrop={(e) => this.handleDrop(e)} />
               if (item.component === 'gridchart') return <GridReports totalStateWiseCase={this.state.totalStateWiseCase} order={item.component} key={index} handleDrag={(e) => this.handleDrag(e)} handleDrop={(e) => this.handleDrop(e)} />
+              return (<span></span>)
             })}
           </div>
         </Fragment>
