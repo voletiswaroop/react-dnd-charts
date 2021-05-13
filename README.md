@@ -2,7 +2,7 @@
 
 This Reactjs project enables users to drag and drop any widget from one place to other
 
-[http://swaroopvoleti.me/reactcharts/] Demo
+[http://voletiswaroop.github.io/react-dnd-charts/] Demo
 
 # Copyright and License
 
