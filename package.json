@@ -1,8 +1,8 @@
 {
-  "name": "react-charts",
+  "name": "react-dnd-charts",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://voletiswaroop.github.io/react-dnd-chart",
+  "homepage": "https://voletiswaroop.github.io/react-dnd-charts/",
   "author": {
     "name": "Swaroop Gupta Voleti"
   },
