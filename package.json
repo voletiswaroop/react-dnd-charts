@@ -1,8 +1,7 @@
 {
-  "name": "react-charts",
-  "version": "0.1.0",
-  "private": true,
-  "homepage": "https://voletiswaroop.github.io/react-dnd-chart",
+  "name": "react-dnd-charts",
+  "version": "1.1.0",
+  "homepage": "https://voletiswaroop.github.io/react-dnd-charts/",
   "author": {
     "name": "Swaroop Gupta Voleti"
   },
@@ -11,7 +10,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-drag-and-drop": "^3.0.0",
-    "react-scripts": "^4.0.3"
+    "react-scripts": "^0.9.5"
   },
   "devDependencies": {
     "gh-pages": "^2.2.0"
@@ -27,12 +26,12 @@
   "browserslist": {
     "production": [
       ">0.2%",
-      "not dead",
-      "not op_mini all"
+      "not op_mini all",
+      "not ie <= 11"
     ],
     "development": [
       "last 1 chrome version",
-      "last 1 firefox version",
+      "last 1 firefox version", 
       "last 1 safari version"
     ]
   }

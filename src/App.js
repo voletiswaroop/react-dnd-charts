@@ -37,7 +37,8 @@ class App extends Component {
   }
 
   componentDidMount() {
-    axios.get('https://api.covid19india.org/data.json').then(stateData => {
+    axios.get('https://data.covid19india.org/data.json').then(stateData => {
+      console.log(stateData,'da');
       this.setState({
         totalDayWiseCase: stateData.data.cases_time_series,
         totalStateWiseCase: stateData.data.statewise,
