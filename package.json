@@ -1,8 +1,6 @@
 {
   "name": "react-dnd-charts",
   "version": "1.1.0",
-  "private": true,
-  "proxy": "https://data.covid19india.org",
   "homepage": "https://voletiswaroop.github.io/react-dnd-charts/",
   "author": {
     "name": "Swaroop Gupta Voleti"
@@ -28,12 +26,12 @@
   "browserslist": {
     "production": [
       ">0.2%",
-      "not dead",
-      "not op_mini all"
+      "not op_mini all",
+      "not ie <= 11"
     ],
     "development": [
       "last 1 chrome version",
-      "last 1 firefox version",
+      "last 1 firefox version", 
       "last 1 safari version"
     ]
   }
